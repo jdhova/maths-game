@@ -21,6 +21,22 @@
      const start = document.querySelector('.start');
      const restart = document.querySelector('.reset');
      const userInput = document.querySelector('input');
+
+    var sound = {
+        win: new Howl({
+            src: ['sounds/win.mp3']
+        }),
+        win1: new Howl({
+            src: ['sounds/win1.mp3']
+        }),
+        fail: new Howl({
+            src: ['sounds/fail.mp3']
+        }),
+        gameOver: new Howl({
+            src: ['sounds/game-over.mp3']
+        })
+        
+    }
      
 
      const generateNum = () => {
@@ -52,8 +68,8 @@
         answer = randomNumber1 * randomNumber2;
         message1.innerText = `${randomNumber1} ` + ' * ' + `${randomNumber2} = ` ; 
         userInput.value = '';  
-        console.log(randomNumber1, randomNumber2);
-        console.log(typeof randomNumber1, typeof randomNumber2);
+        // console.log(randomNumber1, randomNumber2);
+        // console.log(typeof randomNumber1, typeof randomNumber2);
     }
 
 
@@ -85,6 +101,7 @@
         scoreBoard.innerText =  score;
         userInput.value = '';
         userInput.disabled = true;
+        sound.win.gameOver()
         score = 0;
 
     }
@@ -111,21 +128,54 @@
     }
         
         );
-  
+
+       
+        function firstStageSound() {
+            if(score > 1) {
+                sound.win1.play()
+            }
+           
+        }
+
+        function secondStageSound() {
+            
+            if(score === 4 ) {
+                // firstStage();
+                sound.win.play()
+            }
+          
+        }
+
+      
+
+        // function thirdStageSound() {
+            
+        //     if(score === 8 ) {
+        //         // firstStage();
+        //         sound.win.play()
+        //     }
+          
+        // }
+        
+
 
     document.querySelector('.check').addEventListener('click', function () {
 
         if (userInput.value === '') {
-            console.log('empty');
+            // console.log('empty');
             message.innerText = 'Please enter a valid number!';
             //message1.innerText = 'Please enter a valid number!';
         } else if (parseInt(userInput.value) === answer && score < 3) 
             { 
 
-                console.log('here now less than 3');
+                // less thzn 3 sound here
+                // console.log('here now less than 3');
                 message.innerText = 'Correct!';
                 score += 1;
+                // firstStage();
+                // sound.win1.play();
                 scoreBoard.innerText = score;
+                firstStageSound();
                 generateNum();
                 
                
@@ -133,8 +183,8 @@
                 } else if (parseInt(userInput.value) !== answer && score > 0 && score < 3) {   
                 score -= 1;
                 scoreBoard.innerText = score;
-
                 message.innerText = 'Wrong !';
+                sound.fail.play();
                 generateNum();
                 
 
@@ -145,12 +195,16 @@
                 gameOver()    
         }  else if 
         (parseInt(userInput.value) === answer && score >= 3 && score <= 6)
-
+        // more thzn 3 sound here
 
         {
             message.innerText = 'Correct!';
                 score += 1;
+                //secondStage();
+                // sound.win.play();
                 scoreBoard.innerText = score;
+                firstStageSound();
+                secondStageSound();
             
             generateNum2();
             console.log('activated substracton')
@@ -160,6 +214,7 @@
             scoreBoard.innerText = score;
 
             message.innerText = 'Wrong !';
+            sound.fail.play();
             generateNum2();
             
 
@@ -173,6 +228,7 @@
                 scoreBoard.innerText = score;
             
             generateNum3();
+            //more thzn 6 sound here
             console.log('multi substracton')
             
         } else if (parseInt(userInput.value) !== answer && score >= 6 && score <= 9) {   
@@ -180,6 +236,7 @@
             scoreBoard.innerText = score;
 
             message.innerText = 'Wrong !';
+            sound.fail.play();
             generateNum3();
             
 
@@ -200,6 +257,7 @@
             scoreBoard.innerText = score;
 
             message.innerText = 'Wrong !';
+            sound.fail.play();
             generateNum4();
 
         } 
