@@ -21,6 +21,7 @@
      const start = document.querySelector('.start');
      const restart = document.querySelector('.reset');
      const userInput = document.querySelector('input');
+     const img = document.querySelector("img");
 
     var sound = {
         win: new Howl({
@@ -86,10 +87,7 @@
     }
 
 
-   
- 
 
-              
 
     const gameOver = () => {
 
@@ -101,7 +99,7 @@
         scoreBoard.innerText =  score;
         userInput.value = '';
         userInput.disabled = true;
-        sound.win.gameOver()
+        sound.gameOver.play()
         score = 0;
 
     }
@@ -140,11 +138,31 @@
         function secondStageSound() {
             
             if(score === 4 ) {
-                // firstStage();
                 sound.win.play()
             }
           
         }
+
+        function successImage() {
+        img.src = 'img/good.jpeg';
+        clearTimeout(1000);
+        }   
+
+    //     setTimeout(() => {
+    //         img.src = 'img/good.jpeg';
+    //  //console.log("Delayed for 1 second.");
+    //     }, "1000")
+
+    
+        // setTimeout(() => {
+        //             img.src = 'img/good.jpeg';
+        //         console.log("Delayed for 1 second.");
+        //         }, "1000")
+    
+        // setTimeout(function successImage() {
+        //     img.src = 'img/good.jpeg';
+        //     // clearTimeout(1000);
+        //     } , 1000)
 
       
 
@@ -170,13 +188,35 @@
 
                 // less thzn 3 sound here
                 // console.log('here now less than 3');
+
                 message.innerText = 'Correct!';
+                
+                // img.src = 'img/good.jpeg';
                 score += 1;
                 // firstStage();
                 // sound.win1.play();
                 scoreBoard.innerText = score;
+                //successImage();
                 firstStageSound();
                 generateNum();
+
+                setTimeout(function successImage() {
+                    img.src = 'img/good.jpeg';
+                    console.log('heheheh')
+                    // clearTimeout(1000);
+                    } , 1000)
+                    
+                    // function myStopFunction() {
+                    //     clearTimeout(myTimeout);
+                    //   }
+                    // window.setTimeout('cycle();',5000);
+
+                // clearTimeout(function successImage() {
+                //         img.src = 'img/good.jpeg';
+                //         console.log('heheheh stop')
+                //         // clearTimeout(1000);
+                //         } , 3000)
+
                 
                
         
