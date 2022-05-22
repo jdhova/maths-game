@@ -143,38 +143,30 @@
           
         }
 
-        function successImage() {
-        img.src = 'img/good.jpeg';
-        clearTimeout(1000);
-        }   
+            function successImage() {
+                img.src = 'img/good.jpeg';
+            
+            }
+            function successImage2() {
+                img.src = 'img/awersome.gif';
+                
+                }
+            function cry() {
+                img.src = 'img/cry.jpeg';
+                
+                    }
+            function hideImage() {
+                img.src = '';
+                
+                }
 
-    //     setTimeout(() => {
-    //         img.src = 'img/good.jpeg';
-    //  //console.log("Delayed for 1 second.");
-    //     }, "1000")
-
-    
-        // setTimeout(() => {
-        //             img.src = 'img/good.jpeg';
-        //         console.log("Delayed for 1 second.");
-        //         }, "1000")
-    
         // setTimeout(function successImage() {
         //     img.src = 'img/good.jpeg';
+        //     console.log('heheheh')
         //     // clearTimeout(1000);
         //     } , 1000)
 
-      
-
-        // function thirdStageSound() {
-            
-        //     if(score === 8 ) {
-        //         // firstStage();
-        //         sound.win.play()
-        //     }
-          
-        // }
-        
+  
 
 
     document.querySelector('.check').addEventListener('click', function () {
@@ -196,28 +188,10 @@
                 // firstStage();
                 // sound.win1.play();
                 scoreBoard.innerText = score;
-                //successImage();
                 firstStageSound();
                 generateNum();
-
-                setTimeout(function successImage() {
-                    img.src = 'img/good.jpeg';
-                    console.log('heheheh')
-                    // clearTimeout(1000);
-                    } , 1000)
-                    
-                    // function myStopFunction() {
-                    //     clearTimeout(myTimeout);
-                    //   }
-                    // window.setTimeout('cycle();',5000);
-
-                // clearTimeout(function successImage() {
-                //         img.src = 'img/good.jpeg';
-                //         console.log('heheheh stop')
-                //         // clearTimeout(1000);
-                //         } , 3000)
-
-                
+                setTimeout(successImage, 1000);
+                setTimeout(hideImage, 2000);
                
         
                 } else if (parseInt(userInput.value) !== answer && score > 0 && score < 3) {   
@@ -226,6 +200,8 @@
                 message.innerText = 'Wrong !';
                 sound.fail.play();
                 generateNum();
+                setTimeout(cry, 1000);
+                setTimeout(hideImage, 2000);
                 
 
 
@@ -240,13 +216,12 @@
         {
             message.innerText = 'Correct!';
                 score += 1;
-                //secondStage();
-                // sound.win.play();
                 scoreBoard.innerText = score;
                 firstStageSound();
                 secondStageSound();
-            
-            generateNum2();
+                 generateNum2();
+                setTimeout(successImage2, 1000);
+                setTimeout(hideImage, 2000);
             console.log('activated substracton')
             
         } else if (parseInt(userInput.value) !== answer && score  >= 3 && score <= 6) {   
@@ -256,6 +231,8 @@
             message.innerText = 'Wrong !';
             sound.fail.play();
             generateNum2();
+            setTimeout(cry, 1000);
+            setTimeout(hideImage, 2000);
             
 
 
@@ -267,7 +244,7 @@
                 score += 1;
                 scoreBoard.innerText = score;
             
-            generateNum3();
+             generateNum3();
             //more thzn 6 sound here
             console.log('multi substracton')
             
@@ -278,6 +255,8 @@
             message.innerText = 'Wrong !';
             sound.fail.play();
             generateNum3();
+            setTimeout(cry, 1000);
+            setTimeout(hideImage, 2000);
             
 
 
@@ -290,6 +269,8 @@
                 scoreBoard.innerText = score;
             
             generateNum4();
+            setTimeout(successImage2, 1000);
+            setTimeout(hideImage, 2000);
             console.log('multi substracton')
             
         } else if (parseInt(userInput.value) !== answer && score >= 9 && score <= 12) {   
@@ -299,6 +280,8 @@
             message.innerText = 'Wrong !';
             sound.fail.play();
             generateNum4();
+            setTimeout(cry, 1000);
+            setTimeout(hideImage, 2000);
 
         } 
     
