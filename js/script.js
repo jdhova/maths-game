@@ -129,7 +129,7 @@
         
         );
 
-       
+    //    Sound Functions
         function firstStageSound() {
             if(score > 1) {
                 sound.win1.play()
@@ -146,12 +146,23 @@
           
         }
 
+        function thirdStageSound() {
+            
+            if(score === 4 ) {
+                sound.win.play()
+                
+            }
+          
+        }
+
+        // Emogi Functions
         function successImage() {
             img.src = 'img/good.jpeg';
         
         }
         function successImage2() {
             img.src = 'img/awersome.gif';
+            //img.src = 'img/awe.jpeg';
             
             }
         function cry() {
@@ -159,12 +170,16 @@
             
                 }
         function mag() {
-            img.src = 'img/cry.jpeg';
+            img.src = 'img/best2.jpeg';
                     
                 }
         function dead() {
             img.src = 'img/dead.jpeg';
-                    
+        }      
+
+        function best() {
+            img.src = 'img/best.jpeg';
+                        
                 }
         function hideImage() {
             img.src = '';
@@ -248,7 +263,7 @@
             message.innerText = 'Correct!';
                 score += 1;
                 scoreBoard.innerText = score;
-            
+                firstStageSound();
              generateNum3();
              setTimeout(mag, 1000);
             setTimeout(hideImage, 2000);
@@ -273,11 +288,11 @@
             message.innerText = 'Correct!';
                 score += 1;
                 scoreBoard.innerText = score;
-            
-            generateNum4();
-            setTimeout(successImage2, 1000);
-            setTimeout(hideImage, 2000);
-            console.log('multi substracton')
+                firstStageSound();
+                generateNum4();
+                setTimeout(best, 1000);
+                setTimeout(hideImage, 2000);
+           
             
         } else if (parseInt(userInput.value) !== answer && score >= 9 && score <= 12) {   
             score -= 1;
@@ -313,5 +328,4 @@
 
     
   
-
 
