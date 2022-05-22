@@ -100,6 +100,8 @@
         userInput.disabled = true;
         sound.gameOver.play()
         score = 0;
+        setTimeout(dead, 1000);
+        //setTimeout(hideImage, 8000);
 
     }
 
@@ -120,7 +122,8 @@
         message1.innerText = '';  
         start.style.display = 'block';
         restartGame.style.display = 'none';
-        userInput.value = '';      
+        userInput.value = '';  
+        generateNum();    
        
     }
         
@@ -138,6 +141,7 @@
             
             if(score === 4 ) {
                 sound.win.play()
+                
             }
           
         }
@@ -153,6 +157,14 @@
         function cry() {
             img.src = 'img/cry.jpeg';
             
+                }
+        function mag() {
+            img.src = 'img/cry.jpeg';
+                    
+                }
+        function dead() {
+            img.src = 'img/dead.jpeg';
+                    
                 }
         function hideImage() {
             img.src = '';
@@ -238,7 +250,10 @@
                 scoreBoard.innerText = score;
             
              generateNum3();
-            console.log('multi substracton')
+             setTimeout(mag, 1000);
+            setTimeout(hideImage, 2000);
+            
+
             
         } else if (parseInt(userInput.value) !== answer && score >= 6 && score <= 9) {   
             score -= 1;
