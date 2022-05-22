@@ -69,8 +69,7 @@
         answer = randomNumber1 * randomNumber2;
         message1.innerText = `${randomNumber1} ` + ' * ' + `${randomNumber2} = ` ; 
         userInput.value = '';  
-        // console.log(randomNumber1, randomNumber2);
-        // console.log(typeof randomNumber1, typeof randomNumber2);
+       
     }
 
 
@@ -143,22 +142,22 @@
           
         }
 
-            function successImage() {
-                img.src = 'img/good.jpeg';
+        function successImage() {
+            img.src = 'img/good.jpeg';
+        
+        }
+        function successImage2() {
+            img.src = 'img/awersome.gif';
             
             }
-            function successImage2() {
-                img.src = 'img/awersome.gif';
-                
+        function cry() {
+            img.src = 'img/cry.jpeg';
+            
                 }
-            function cry() {
-                img.src = 'img/cry.jpeg';
-                
-                    }
-            function hideImage() {
-                img.src = '';
-                
-                }
+        function hideImage() {
+            img.src = '';
+            
+            }
 
         // setTimeout(function successImage() {
         //     img.src = 'img/good.jpeg';
@@ -172,21 +171,16 @@
     document.querySelector('.check').addEventListener('click', function () {
 
         if (userInput.value === '') {
-            // console.log('empty');
+       
             message.innerText = 'Please enter a valid number!';
-            //message1.innerText = 'Please enter a valid number!';
+         
         } else if (parseInt(userInput.value) === answer && score < 3) 
             { 
 
-                // less thzn 3 sound here
-                // console.log('here now less than 3');
+              
 
                 message.innerText = 'Correct!';
-                
-                // img.src = 'img/good.jpeg';
                 score += 1;
-                // firstStage();
-                // sound.win1.play();
                 scoreBoard.innerText = score;
                 firstStageSound();
                 generateNum();
@@ -211,7 +205,6 @@
                 gameOver()    
         }  else if 
         (parseInt(userInput.value) === answer && score >= 3 && score <= 6)
-        // more thzn 3 sound here
 
         {
             message.innerText = 'Correct!';
@@ -245,13 +238,11 @@
                 scoreBoard.innerText = score;
             
              generateNum3();
-            //more thzn 6 sound here
             console.log('multi substracton')
             
         } else if (parseInt(userInput.value) !== answer && score >= 6 && score <= 9) {   
             score -= 1;
             scoreBoard.innerText = score;
-
             message.innerText = 'Wrong !';
             sound.fail.play();
             generateNum3();
