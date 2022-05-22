@@ -77,7 +77,8 @@
                     
         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
-        answer = randomNumber1 > randomNumber2 ? randomNumber1 * randomNumber2 / randomNumber2 : randomNumber2 * randomNumber2/ randomNumber1;
+
+        answer = randomNumber1 > randomNumber2 ? randomNumber1 * randomNumber2 / randomNumber2 : randomNumber2 * randomNumber1/ randomNumber1;
 
         randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1 * randomNumber2} ` + '/ ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2 * randomNumber1 } ` + '/ ' + `${randomNumber1} = ` ;
          userInput.value = '';  
@@ -281,7 +282,7 @@
             
 
 
-        } else if (parseInt(userInput.value) === answer && score >= 9 && score <= 12)
+        } else if (parseInt(userInput.value) === answer && score >= 9 && score <= 1200)
 
 
         {
@@ -294,7 +295,7 @@
                 setTimeout(hideImage, 2000);
            
             
-        } else if (parseInt(userInput.value) !== answer && score >= 9 && score <= 12) {   
+        } else if (parseInt(userInput.value) !== answer && score >= 9 && score <= 1200) {   
             score -= 1;
             scoreBoard.innerText = score;
 
