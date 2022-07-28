@@ -6,6 +6,8 @@
 
 ## Overview
 
+## COMPLETE
+
 ### Your first assignment will start out with something fun - a game!
 
 ```

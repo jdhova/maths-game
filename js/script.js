@@ -106,7 +106,19 @@
 
     }
 
-    document.querySelector('.start').addEventListener('click',  function (){
+    // document.querySelector('.start').addEventListener('click',  function (){
+    //     message.innerText = 'start...!';
+    //     restartGame.style.display = 'none';
+    //     scoreBoard.innerText = 1;
+    //     score = 1
+    //     userInput.disabled = false;
+    //     generateNum();
+    // }
+        
+    //     );
+
+
+    start.addEventListener('click',  function (){
         message.innerText = 'start...!';
         restartGame.style.display = 'none';
         scoreBoard.innerText = 1;
@@ -116,6 +128,7 @@
     }
         
         );
+
 
 
     document.querySelector('.restartGame').addEventListener('click',  function (){
