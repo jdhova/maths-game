@@ -10,7 +10,7 @@
      let highScore = 0;
     //  const score2 = score > 20 && score < 30 ? score > 40 && score < 50 ? 'Excellent' : 'Fantastic';
 
-     let score2 = score > 3 && score < 6 ? score :''
+     let score2 = score > 3 && score < 20 ? score :''
 
      
      const scoreBoard = document.querySelector('.score');
@@ -153,7 +153,7 @@
 
         function secondStageSound() {
             
-            if(score === 4 ) {
+            if(score >= 20 && score <= 21 ) {
                 sound.win.play()
                 
             }
@@ -162,7 +162,7 @@
 
         function thirdStageSound() {
             
-            if(score === 4 ) {
+            if(score >= 50 && score <= 51 ) {
                 sound.win.play()
                 
             }
@@ -215,7 +215,7 @@
        
             message.innerText = 'Please enter a valid number!';
          
-        } else if (parseInt(userInput.value) === answer && score < 3) 
+        } else if (parseInt(userInput.value) === answer && score < 20) 
             { 
 
               
@@ -229,7 +229,7 @@
                 setTimeout(hideImage, 2000);
                
         
-                } else if (parseInt(userInput.value) !== answer && score > 0 && score < 3) {   
+                } else if (parseInt(userInput.value) !== answer && score > 0 && score < 20) {       
                 score -= 1;
                 scoreBoard.innerText = score;
                 message.innerText = 'Wrong !';
@@ -245,7 +245,7 @@
             {
                 gameOver()    
         }  else if 
-        (parseInt(userInput.value) === answer && score >= 3 && score <= 6)
+        (parseInt(userInput.value) === answer && score >= 20 && score <= 50)
 
         {
             message.innerText = 'Correct!';
@@ -258,7 +258,7 @@
                 setTimeout(hideImage, 2000);
             console.log('activated substracton')
             
-        } else if (parseInt(userInput.value) !== answer && score  >= 3 && score <= 6) {   
+        } else if (parseInt(userInput.value) !== answer && score  >= 20 && score <= 50) {   
             score -= 1;
             scoreBoard.innerText = score;
 
@@ -270,7 +270,7 @@
             
 
 
-        } else if (parseInt(userInput.value) === answer && score >= 6 && score <= 9)
+        } else if (parseInt(userInput.value) === answer && score >= 50 && score <= 70)
 
 
         {
@@ -284,7 +284,7 @@
             
 
             
-        } else if (parseInt(userInput.value) !== answer && score >= 6 && score <= 9) {   
+        } else if (parseInt(userInput.value) !== answer && score >= 50 && score <= 70) {   
             score -= 1;
             scoreBoard.innerText = score;
             message.innerText = 'Wrong !';
@@ -295,7 +295,7 @@
             
 
 
-        } else if (parseInt(userInput.value) === answer && score >= 9 && score <= 1200)
+        } else if (parseInt(userInput.value) === answer && score >= 70 && score <= 1200)
 
 
         {
@@ -308,7 +308,7 @@
                 setTimeout(hideImage, 2000);
            
             
-        } else if (parseInt(userInput.value) !== answer && score >= 9 && score <= 1200) {   
+        } else if (parseInt(userInput.value) !== answer && score >= 70 && score <= 1200) {   
             score -= 1;
             scoreBoard.innerText = score;
 
