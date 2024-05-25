@@ -48,7 +48,9 @@
         message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
         userInput.value = '';  
     }
- 
+    
+    // double digits addition
+
 
     const generateNum2 = () => {
                     
@@ -63,7 +65,38 @@
 
     }
 
-    const generateNum3 = () => {                   
+    const generateNum3 = () => {
+                    
+        let randomNumber1 = Math.floor(Math.random() * 10) + 10;
+        let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+        answer = randomNumber1 + randomNumber2;
+        message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
+        userInput.value = '';  
+    }
+
+    const generateNum4 = () => {
+                    
+        let randomNumber1 = Math.floor(Math.random() * 10) + 10;
+        let randomNumber2 = Math.floor(Math.random() * 10) + 10;
+        answer = randomNumber1 + randomNumber2;
+        message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
+        userInput.value = '';  
+    }
+
+    const generateNum5 = () => {
+                    
+        let randomNumber1 = Math.floor(Math.random() * 10) + 10;
+        let randomNumber2 = Math.floor(Math.random() * 10) + 10;
+        answer = randomNumber1 > randomNumber2 ? randomNumber1 - randomNumber2 : randomNumber2 - randomNumber1;
+
+        randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1} ` + '- ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2} ` + '- ' + `${randomNumber1} = ` ;
+
+        userInput.value = '';  
+
+
+    }
+
+    const generateNum6 = () => {                   
         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
         answer = randomNumber1 * randomNumber2;
@@ -73,7 +106,7 @@
     }
 
 
-    const generateNum4 = () => {
+    const generateNum7 = () => {
                     
         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
@@ -125,6 +158,7 @@
         score = 1
         userInput.disabled = false;
         generateNum();
+       
     }
         
         );
@@ -138,6 +172,7 @@
         restartGame.style.display = 'none';
         userInput.value = '';  
         generateNum();    
+      
        
     }
         
@@ -166,6 +201,8 @@
                 sound.win.play()
                 
             }
+
+            // Third and fouth game sound pending
           
         }
 
@@ -278,7 +315,8 @@
                 score += 1;
                 scoreBoard.innerText = score;
                 firstStageSound();
-             generateNum3();
+                thirdStageSound();
+                generateNum3();
              setTimeout(mag, 1000);
             setTimeout(hideImage, 2000);
             
@@ -295,7 +333,7 @@
             
 
 
-        } else if (parseInt(userInput.value) === answer && score >= 70 && score <= 1200)
+        } else if (parseInt(userInput.value) === answer && score >= 70 && score <= 90)
 
 
         {
@@ -308,7 +346,7 @@
                 setTimeout(hideImage, 2000);
            
             
-        } else if (parseInt(userInput.value) !== answer && score >= 70 && score <= 1200) {   
+        } else if (parseInt(userInput.value) !== answer && score >= 70 && score <= 90) {   
             score -= 1;
             scoreBoard.innerText = score;
 
@@ -318,7 +356,78 @@
             setTimeout(cry, 1000);
             setTimeout(hideImage, 2000);
 
-        } 
+        } else if (parseInt(userInput.value) === answer && score >= 90 && score <= 110)
+
+
+            {
+                message.innerText = 'Correct!';
+                    score += 1;
+                    scoreBoard.innerText = score;
+                    firstStageSound();
+                    generateNum5();
+                    setTimeout(best, 1000);
+                    setTimeout(hideImage, 2000);
+               
+                
+            } else if (parseInt(userInput.value) !== answer && score >= 90 && score <= 110) {   
+                score -= 1;
+                scoreBoard.innerText = score;
+    
+                message.innerText = 'Wrong !';
+                sound.fail.play();
+                generateNum5();
+                setTimeout(cry, 1000);
+                setTimeout(hideImage, 2000);
+    
+            } else if (parseInt(userInput.value) === answer && score >= 110 && score <= 130)
+
+
+                {
+                    message.innerText = 'Correct!';
+                        score += 1;
+                        scoreBoard.innerText = score;
+                        firstStageSound();
+                        generateNum6();
+                        setTimeout(best, 1000);
+                        setTimeout(hideImage, 2000);
+                   
+                    
+                } else if (parseInt(userInput.value) !== answer && score >= 110 && score <= 130) {   
+                    score -= 1;
+                    scoreBoard.innerText = score;
+        
+                    message.innerText = 'Wrong !';
+                    sound.fail.play();
+                    generateNum6();
+                    setTimeout(cry, 1000);
+                    setTimeout(hideImage, 2000);
+        
+                } else if (parseInt(userInput.value) === answer && score >= 130 && score <= 1130)
+
+
+                    {
+                        message.innerText = 'Correct!';
+                            score += 1;
+                            scoreBoard.innerText = score;
+                            firstStageSound();
+                            generateNum7();
+                            setTimeout(best, 1000);
+                            setTimeout(hideImage, 2000);
+                       
+                        
+                    } else if (parseInt(userInput.value) !== answer && score >= 130 && score <= 1130) {   
+                        score -= 1;
+                        scoreBoard.innerText = score;
+            
+                        message.innerText = 'Wrong !';
+                        sound.fail.play();
+                        generateNum7();
+                        setTimeout(cry, 1000);
+                        setTimeout(hideImage, 2000);
+            
+                    } 
+
+        
     
     
     });
