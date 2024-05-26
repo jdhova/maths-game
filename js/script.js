@@ -19,7 +19,7 @@
      const message  = document.querySelector('.message');
      const restartGame = document.querySelector('.restartGame');
      const start = document.querySelector('.start');
-     const restart = document.querySelector('.reset');
+    //  const restart = document.querySelector('.reset');
      const userInput = document.querySelector('input');
      const img = document.querySelector("img");
 
@@ -128,7 +128,7 @@
         message1.innerText = 'Game Over';
         restartGame.innerText = 'Play Again';
         start.style.display = 'none';
-        restartGame.style.display = 'block';
+        restartGame.style.display = 'none';
         scoreBoard.innerText =  score;
         userInput.value = '';
         userInput.disabled = true;
@@ -138,6 +138,19 @@
         //setTimeout(hideImage, 8000);
 
     }
+
+    //   document.querySelector('.restartGame').addEventListener('click',  function (){
+    //     message.innerText = 'start...!';
+    //     restartGame.style.display = 'none';
+    //     start.style.display = 'block';
+    //     scoreBoard.innerText = 1;
+    //     score = 1
+    //     userInput.disabled = false;
+    //     generateNum();
+       
+    // }
+        
+    //     );
 
     // document.querySelector('.start').addEventListener('click',  function (){
     //     message.innerText = 'start...!';
@@ -152,8 +165,9 @@
 
 
     start.addEventListener('click',  function (){
-        message.innerText = 'start...!';
-        restartGame.style.display = 'none';
+        message.innerText = 'Start...!';
+        restartGame.style.display = 'block';
+        start.style.display = 'none';
         scoreBoard.innerText = 1;
         score = 1
         userInput.disabled = false;
@@ -166,11 +180,14 @@
 
 
     document.querySelector('.restartGame').addEventListener('click',  function (){
-        message.innerText = 'start...!';
+        message.innerText = 'Press Start button...!';
         message1.innerText = '';  
         start.style.display = 'block';
         restartGame.style.display = 'none';
         userInput.value = '';  
+        scoreBoard.innerText = 1;
+        score = 1
+        userInput.disabled = true;
         generateNum();    
       
        
