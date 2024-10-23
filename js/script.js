@@ -1,6 +1,6 @@
 'use strict';
 
-
+// Global Variables
      let answer
      let randomNumber1 
      let randomNumber2 
@@ -49,7 +49,7 @@
         userInput.value = '';  
     }
     
-    // double digits addition
+
 
 
     const generateNum2 = () => {
@@ -73,6 +73,7 @@
         message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
         userInput.value = '';  
     }
+        // double digits addition
 
     const generateNum4 = () => {
                     
@@ -82,6 +83,9 @@
         message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
         userInput.value = '';  
     }
+
+    
+        // double digits Subtraction
 
     const generateNum5 = () => {
                     
@@ -96,6 +100,22 @@
 
     }
 
+      // double digits Subtraction Borrowing 
+
+    const generateNum55 = () => {
+                    
+        let randomNumber1 = Math.floor(Math.random() * 10) + 20;
+        let randomNumber2 = Math.floor(Math.random() * 10) + 10;
+        answer = randomNumber1 > randomNumber2 ? randomNumber1 - randomNumber2 : randomNumber2 - randomNumber1;
+
+        randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1} ` + '- ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2} ` + '- ' + `${randomNumber1} = ` ;
+
+        userInput.value = '';  
+
+
+    }
+
+// Single Digit Multiplication
     const generateNum6 = () => {                   
         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
         let randomNumber2 = Math.floor(Math.random() * 10) + 1;
@@ -105,7 +125,7 @@
        
     }
 
-
+// Single Digits Devision Yet to be implemented in If else statment
     const generateNum7 = () => {
                     
         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
@@ -404,7 +424,7 @@
                         score += 1;
                         scoreBoard.innerText = score;
                         firstStageSound();
-                        generateNum6();
+                        generateNum55();
                         setTimeout(best, 1000);
                         setTimeout(hideImage, 2000);
                    
@@ -415,7 +435,7 @@
         
                     message.innerText = 'Wrong !';
                     sound.fail.play();
-                    generateNum6();
+                    generateNum55();
                     setTimeout(cry, 1000);
                     setTimeout(hideImage, 2000);
         
@@ -427,7 +447,7 @@
                             score += 1;
                             scoreBoard.innerText = score;
                             firstStageSound();
-                            generateNum7();
+                            generateNum6();
                             setTimeout(best, 1000);
                             setTimeout(hideImage, 2000);
                        
@@ -438,7 +458,7 @@
             
                         message.innerText = 'Wrong !';
                         sound.fail.play();
-                        generateNum7();
+                        generateNum6();
                         setTimeout(cry, 1000);
                         setTimeout(hideImage, 2000);
             
