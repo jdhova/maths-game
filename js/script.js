@@ -218,6 +218,8 @@
         score = 1
         userInput.disabled = false;
         generateNum();
+        // generateNumTripleDigitAddision() 
+        //generateNumTripleDigitSubtraction();
        
     }
         
@@ -234,7 +236,9 @@
         scoreBoard.innerText = 1;
         score = 1
         userInput.disabled = true;
-        generateNum();    
+       generateNum();  
+       // generateNumTripleDigitAddision() 
+       //generateNumTripleDigitSubtraction(); 
       
        
     }
@@ -324,7 +328,9 @@
                 score += 1;
                 scoreBoard.innerText = score;
                 firstStageSound();
-                generateNum();
+                 generateNum();
+                // generateNumTripleDigitAddision()
+                //generateNumTripleDigitSubtraction();
                 setTimeout(successImage, 1000);
                 setTimeout(hideImage, 2000);
                
@@ -335,6 +341,8 @@
                 message.innerText = 'Wrong !';
                 sound.fail.play();
                 generateNum();
+                // generateNumTripleDigitAddision()
+                //generateNumTripleDigitSubtraction();
                 setTimeout(cry, 1000);
                 setTimeout(hideImage, 2000);
                 
@@ -345,7 +353,7 @@
             {
                 gameOver()    
         }  else if 
-        (parseInt(userInput.value) === answer && score >= 5 && score <= 10)
+        (parseInt(userInput.value) === answer && score >= 5 && score <= 13)
 
         {
             message.innerText = 'Correct!';
@@ -358,7 +366,7 @@
                 setTimeout(hideImage, 2000);
             console.log('activated substracton')
             
-        } else if (parseInt(userInput.value) !== answer && score  >= 10 && score <= 13) {   
+        } else if (parseInt(userInput.value) !== answer && score  >= 5 && score <= 13) {   
             score -= 1;
             scoreBoard.innerText = score;
 
