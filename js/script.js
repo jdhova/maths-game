@@ -116,7 +116,7 @@
     }
 
 // Triple Digit Addision
-    const generateNum44 = () => {
+    const generateNumTripleDigitAddision = () => {
                     
         let randomNumber1 = Math.floor(Math.random() * 10) + 200;
         let randomNumber2 = Math.floor(Math.random() * 10) + 100;
@@ -128,7 +128,7 @@
 
 
 // Triple Digit Subtraction
-    const generateNum56 = () => {
+    const generateNumTripleDigitSubtraction = () => {
                     
         let randomNumber1 = Math.floor(Math.random() * 10) + 200;
         let randomNumber2 = Math.floor(Math.random() * 10) + 100;
@@ -473,7 +473,7 @@
                             score += 1;
                             scoreBoard.innerText = score;
                             firstStageSound();
-                            generateNum44();
+                            generateNumTripleDigitAddision();
                             setTimeout(best, 1000);
                             setTimeout(hideImage, 2000);
                        
@@ -484,7 +484,7 @@
             
                         message.innerText = 'Wrong !';
                         sound.fail.play();
-                        generateNum44();
+                        generateNumTripleDigitAddision();
                         setTimeout(cry, 1000);
                         setTimeout(hideImage, 2000);
             
@@ -496,7 +496,7 @@
                                 score += 1;
                                 scoreBoard.innerText = score;
                                 firstStageSound();
-                                generateNum56();
+                                generateNumTripleDigitSubtraction();
                                 setTimeout(best, 1000);
                                 setTimeout(hideImage, 2000);
                            
@@ -507,7 +507,7 @@
                 
                             message.innerText = 'Wrong !';
                             sound.fail.play();
-                            generateNum56();
+                            generateNumTripleDigitSubtraction();
                             setTimeout(cry, 1000);
                             setTimeout(hideImage, 2000);
                 
