@@ -115,6 +115,32 @@
 
     }
 
+// Triple Digit Addision
+    const generateNum44 = () => {
+                    
+        let randomNumber1 = Math.floor(Math.random() * 10) + 200;
+        let randomNumber2 = Math.floor(Math.random() * 10) + 100;
+        answer = randomNumber1 + randomNumber2;
+        message1.innerText = `${randomNumber1} ` + '+ ' + `${randomNumber2} = ` ; 
+        userInput.value = '';  
+    }
+
+
+
+// Triple Digit Subtraction
+    const generateNum56 = () => {
+                    
+        let randomNumber1 = Math.floor(Math.random() * 10) + 200;
+        let randomNumber2 = Math.floor(Math.random() * 10) + 100;
+        answer = randomNumber1 > randomNumber2 ? randomNumber1 - randomNumber2 : randomNumber2 - randomNumber1;
+
+        randomNumber1 > randomNumber2 ? message1.innerText = `${randomNumber1} ` + '- ' + `${randomNumber2} = ` : message1.innerText = `${randomNumber2} ` + '- ' + `${randomNumber1} = ` ;
+
+        userInput.value = '';  
+
+
+    }
+
 // Single Digit Multiplication
     const generateNum6 = () => {                   
         let randomNumber1 = Math.floor(Math.random() * 10) + 1;
@@ -416,7 +442,7 @@
                 setTimeout(cry, 1000);
                 setTimeout(hideImage, 2000);
     
-            } else if (parseInt(userInput.value) === answer && score >= 23 && score <= 130)
+            } else if (parseInt(userInput.value) === answer && score >= 23 && score <= 50)
 
 
                 {
@@ -429,7 +455,7 @@
                         setTimeout(hideImage, 2000);
                    
                     
-                } else if (parseInt(userInput.value) !== answer && score >= 23 && score <= 130) {   
+                } else if (parseInt(userInput.value) !== answer && score >= 23 && score <= 50) {   
                     score -= 1;
                     scoreBoard.innerText = score;
         
@@ -439,7 +465,7 @@
                     setTimeout(cry, 1000);
                     setTimeout(hideImage, 2000);
         
-                } else if (parseInt(userInput.value) === answer && score >= 130 && score <= 1130)
+                } else if (parseInt(userInput.value) === answer && score >= 50 && score <= 75)
 
 
                     {
@@ -447,22 +473,68 @@
                             score += 1;
                             scoreBoard.innerText = score;
                             firstStageSound();
-                            generateNum6();
+                            generateNum44();
                             setTimeout(best, 1000);
                             setTimeout(hideImage, 2000);
                        
                         
-                    } else if (parseInt(userInput.value) !== answer && score >= 130 && score <= 1130) {   
+                    } else if (parseInt(userInput.value) !== answer && score >= 50 && score <= 75) {   
                         score -= 1;
                         scoreBoard.innerText = score;
             
                         message.innerText = 'Wrong !';
                         sound.fail.play();
-                        generateNum6();
+                        generateNum44();
                         setTimeout(cry, 1000);
                         setTimeout(hideImage, 2000);
             
-                    } 
+                    } else if (parseInt(userInput.value) === answer && score >= 75 && score <= 100)
+
+
+                        {
+                            message.innerText = 'Correct!';
+                                score += 1;
+                                scoreBoard.innerText = score;
+                                firstStageSound();
+                                generateNum56();
+                                setTimeout(best, 1000);
+                                setTimeout(hideImage, 2000);
+                           
+                            
+                        } else if (parseInt(userInput.value) !== answer && score >= 75 && score <= 100) {   
+                            score -= 1;
+                            scoreBoard.innerText = score;
+                
+                            message.innerText = 'Wrong !';
+                            sound.fail.play();
+                            generateNum56();
+                            setTimeout(cry, 1000);
+                            setTimeout(hideImage, 2000);
+                
+                        } else if (parseInt(userInput.value) === answer && score >= 100 && score <= 1130)
+
+
+                            {
+                                message.innerText = 'Correct!';
+                                    score += 1;
+                                    scoreBoard.innerText = score;
+                                    firstStageSound();
+                                    generateNum6();
+                                    setTimeout(best, 1000);
+                                    setTimeout(hideImage, 2000);
+                               
+                                
+                            } else if (parseInt(userInput.value) !== answer && score >= 100 && score <= 1130) {   
+                                score -= 1;
+                                scoreBoard.innerText = score;
+                    
+                                message.innerText = 'Wrong !';
+                                sound.fail.play();
+                                generateNum6();
+                                setTimeout(cry, 1000);
+                                setTimeout(hideImage, 2000);
+                    
+                            } 
 
         
     
