@@ -289,7 +289,7 @@
        
             message.innerText = 'Please enter a valid number!';
          
-        } else if (parseInt(userInput.value) === answer && score < 20) 
+        } else if (parseInt(userInput.value) === answer && score < 5) 
             { 
 
               
@@ -303,7 +303,7 @@
                 setTimeout(hideImage, 2000);
                
         
-                } else if (parseInt(userInput.value) !== answer && score > 0 && score < 20) {       
+                } else if (parseInt(userInput.value) !== answer && score > 0 && score < 5) {       
                 score -= 1;
                 scoreBoard.innerText = score;
                 message.innerText = 'Wrong !';
@@ -319,7 +319,7 @@
             {
                 gameOver()    
         }  else if 
-        (parseInt(userInput.value) === answer && score >= 20 && score <= 50)
+        (parseInt(userInput.value) === answer && score >= 5 && score <= 10)
 
         {
             message.innerText = 'Correct!';
@@ -332,7 +332,7 @@
                 setTimeout(hideImage, 2000);
             console.log('activated substracton')
             
-        } else if (parseInt(userInput.value) !== answer && score  >= 20 && score <= 50) {   
+        } else if (parseInt(userInput.value) !== answer && score  >= 10 && score <= 13) {   
             score -= 1;
             scoreBoard.innerText = score;
 
@@ -344,7 +344,7 @@
             
 
 
-        } else if (parseInt(userInput.value) === answer && score >= 50 && score <= 70)
+        } else if (parseInt(userInput.value) === answer && score >= 13 && score <= 15)
 
 
         {
@@ -359,7 +359,7 @@
             
 
             
-        } else if (parseInt(userInput.value) !== answer && score >= 50 && score <= 70) {   
+        } else if (parseInt(userInput.value) !== answer && score >= 13 && score <= 15) {   
             score -= 1;
             scoreBoard.innerText = score;
             message.innerText = 'Wrong !';
@@ -370,7 +370,7 @@
             
 
 
-        } else if (parseInt(userInput.value) === answer && score >= 70 && score <= 90)
+        } else if (parseInt(userInput.value) === answer && score >= 15 && score <= 20)
 
 
         {
@@ -383,7 +383,7 @@
                 setTimeout(hideImage, 2000);
            
             
-        } else if (parseInt(userInput.value) !== answer && score >= 70 && score <= 90) {   
+        } else if (parseInt(userInput.value) !== answer && score >= 15 && score <= 20) {   
             score -= 1;
             scoreBoard.innerText = score;
 
@@ -393,7 +393,7 @@
             setTimeout(cry, 1000);
             setTimeout(hideImage, 2000);
 
-        } else if (parseInt(userInput.value) === answer && score >= 90 && score <= 110)
+        } else if (parseInt(userInput.value) === answer && score >= 20 && score <= 23)
 
 
             {
@@ -406,7 +406,7 @@
                     setTimeout(hideImage, 2000);
                
                 
-            } else if (parseInt(userInput.value) !== answer && score >= 90 && score <= 110) {   
+            } else if (parseInt(userInput.value) !== answer && score >= 20 && score <= 23) {   
                 score -= 1;
                 scoreBoard.innerText = score;
     
@@ -416,7 +416,7 @@
                 setTimeout(cry, 1000);
                 setTimeout(hideImage, 2000);
     
-            } else if (parseInt(userInput.value) === answer && score >= 110 && score <= 130)
+            } else if (parseInt(userInput.value) === answer && score >= 23 && score <= 130)
 
 
                 {
@@ -429,7 +429,7 @@
                         setTimeout(hideImage, 2000);
                    
                     
-                } else if (parseInt(userInput.value) !== answer && score >= 110 && score <= 130) {   
+                } else if (parseInt(userInput.value) !== answer && score >= 23 && score <= 130) {   
                     score -= 1;
                     scoreBoard.innerText = score;
         
